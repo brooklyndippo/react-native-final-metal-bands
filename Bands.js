@@ -12,8 +12,8 @@ const Item = ({ index, item }) => {
         <Text style={styles.origin}>{item.origin}</Text>
       </View>
       <View style={styles.flexRow}>
-        <Text style={styles.p}>{item.formed}</Text>
-        <Text style={styles.p}>{bandFans.toLocaleString()}</Text>
+        <Text style={styles.formed}>{item.formed}</Text>
+        <Text style={styles.fans}>{bandFans.toLocaleString()}</Text>
       </View>
     </View>
   );
@@ -42,13 +42,14 @@ const styles = StyleSheet.create({
     color: '#fff',
     width: '100%',
     paddingHorizontal: 10,
-    paddingVertical: 16,
+    paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: 'gray'
+    borderBottomColor: '#999'
   },
   flexRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingVertical: 2,
   },
   bandName: {
     color: '#fff',
@@ -62,11 +63,15 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through'
   },
   origin: {
-    color: 'lightgray',
+    color: '#999',
     fontSize: 18
   },
-  p: {
+  formed: {
     color: 'white',
-    fontSize: 16
+    fontSize: 14
+  },
+  fans: {
+    color: 'white',
+    fontSize: 14
   }
 });
