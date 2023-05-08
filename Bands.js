@@ -4,10 +4,11 @@ import './metal.json'
 
 const Item = ({ index, item }) => {
   const bandFans = item.fans * 1000;
+  const bandNameStyle = item.split.length > 1 ? styles.bandName : styles.bandNameSplit;
   return (
     <View style={styles.band} key={index}>
       <View style={styles.flexRow}>
-        <Text style={styles.bandName}>{item.band_name}</Text>
+        <Text style={bandNameStyle}>{item.band_name}</Text>
         <Text style={styles.origin}>{item.origin}</Text>
       </View>
       <View style={styles.flexRow}>
@@ -54,6 +55,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 18
+  },
+  bandNameSplit: {
+    color: 'gray',
+    fontWeight: 'bold',
+    fontSize: 18,
+    textDecorationLine: 'line-through'
   },
   origin: {
     color: 'lightgray',
