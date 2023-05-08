@@ -15,9 +15,18 @@ export default function Stats() {
       }
       return countries
     }, [])
-    const uniqueStyles = metalBands.reduce((styles, band) => {
-      if (!styles.includes(band.style)) {
-        styles.push(band.style)
+    
+    let allStyles = []
+    metalBands.forEach((band) =>  {
+      const styles = band.style.split(',')
+      styles.forEach((style) => {
+        allStyles.push(style)
+      })
+    })
+
+    const uniqueStyles = allStyles.reduce((styles, style) => {
+      if (!styles.includes(style)) {
+        styles.push(style)
       }
       return styles
     }, [])
@@ -31,7 +40,7 @@ export default function Stats() {
         <Text style={styles.label}>Countries: <Text style={styles.stat}>{uniqueCountries.length}</Text></Text>
         <Text style={styles.label}>Active: <Text style={styles.stat}>{active}</Text></Text>
         <Text style={styles.label}>Split: <Text style={styles.stat}>{split}</Text></Text>
-        <Text style={styles.label}>Countries: <Text style={styles.stat}>{uniqueStyles.length}</Text></Text>
+        <Text style={styles.label}>Styles: <Text style={styles.stat}>{uniqueStyles.length}</Text></Text>
       </View>
     );
 }

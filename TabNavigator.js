@@ -4,6 +4,7 @@ import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Bands from './Bands';
 import Stats from './Stats';
+import MetalStyles from './MetalStyles';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,6 +44,16 @@ export default function TabNavigator() {
           tabBarLabel: 'Stats',
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="bar-chart-o" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Styles"
+        component={MetalStyles}
+        options={{
+          tabBarLabel: 'Styles',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="music" color={color} size={size} />
           ),
         }}
       />
