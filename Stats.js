@@ -25,13 +25,13 @@ export default function Stats() {
 
     return (
       <View style={styles.container}>
-        <Text>METAL 🤘</Text>
-        <Text>Count: {totalBands}</Text>
-        <Text>Count: {totalFans.toLocaleString()}</Text>
-        <Text>Countries: {uniqueCountries.length}</Text>
-        <Text>Active: {active}</Text>
-        <Text>Split: {split}</Text>
-        <Text>Countries: {uniqueStyles.length}</Text>
+        <Text style={styles.title}>METAL 🤘</Text>
+        <Text style={styles.label}>Count: <Text style={styles.stat}>{totalBands}</Text></Text>
+        <Text style={styles.label}>Count: <Text style={styles.stat}>{totalFans.toLocaleString()}</Text></Text>
+        <Text style={styles.label}>Countries: <Text style={styles.stat}>{uniqueCountries.length}</Text></Text>
+        <Text style={styles.label}>Active: <Text style={styles.stat}>{active}</Text></Text>
+        <Text style={styles.label}>Split: <Text style={styles.stat}>{split}</Text></Text>
+        <Text style={styles.label}>Countries: <Text style={styles.stat}>{uniqueStyles.length}</Text></Text>
       </View>
     );
 }
@@ -39,8 +39,22 @@ export default function Stats() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    color: '#fff',
+    fontSize: 30,
+    marginBottom: 10,
+    fontWeight: 'bold'
+  },
+  label: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold'
+  }, 
+  stat: {
+    fontWeight: 'normal'
+  }
 });
