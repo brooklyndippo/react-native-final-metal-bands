@@ -21,7 +21,6 @@ const Item = ({ index, item }) => {
 
 export default function Bands() {
   const metalBands = require('./metal.json');
-  console.log(metalBands);
   return (
     <View style={styles.container}>
       <Text>BANDS BANDS BANDS</Text>
